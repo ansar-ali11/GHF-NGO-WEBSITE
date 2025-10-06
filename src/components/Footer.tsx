@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Heart, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/ghf-logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,8 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Heart className="h-6 w-6" fill="currentColor" />
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src={logo} 
+                alt="Giving Hands Foundation Logo" 
+                className="h-10 w-10 object-contain"
+              />
               <span className="font-heading font-bold text-xl">
                 Giving Hands
               </span>

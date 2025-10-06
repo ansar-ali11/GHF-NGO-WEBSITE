@@ -1,7 +1,27 @@
+import { useState } from "react";
 import Hero from "@/components/Hero";
+import TeamMemberDialog from "@/components/TeamMemberDialog";
 import { Heart, Target, Award, Users } from "lucide-react";
 
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  responsibilities: string[];
+  email: string;
+  experience: string;
+}
+
 const About = () => {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleMemberClick = (member: TeamMember) => {
+    setSelectedMember(member);
+    setDialogOpen(true);
+  };
+
   const values = [
     {
       icon: <Heart className="h-8 w-8 text-primary" />,
@@ -25,26 +45,62 @@ const About = () => {
     },
   ];
 
-  const team = [
+  const team: TeamMember[] = [
     {
       name: "Sarah Johnson",
       role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      bio: "Sarah founded Giving Hands Foundation in 2010 with a vision to create sustainable change in underserved communities. With over 15 years of experience in non-profit management, she has led the organization from a small local initiative to a comprehensive foundation serving thousands.",
+      responsibilities: [
+        "Strategic planning and organizational leadership",
+        "Donor relations and fundraising initiatives",
+        "Partnership development with government and corporate entities",
+        "Overall program oversight and impact measurement",
+      ],
+      email: "sarah.johnson@givinghands.org",
+      experience: "15+ years in Non-Profit Leadership",
     },
     {
       name: "Michael Chen",
       role: "Program Director",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      bio: "Michael brings 12 years of program management experience to Giving Hands. He oversees all program operations, ensuring quality delivery and measurable impact across education, healthcare, and empowerment initiatives.",
+      responsibilities: [
+        "Program design, implementation, and monitoring",
+        "Team coordination and volunteer management",
+        "Budget planning and resource allocation",
+        "Quality assurance and program evaluation",
+      ],
+      email: "michael.chen@givinghands.org",
+      experience: "12+ years in Program Management",
     },
     {
       name: "Priya Patel",
       role: "Healthcare Coordinator",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      bio: "Dr. Priya Patel is a registered nurse with 10 years of community health experience. She leads our healthcare programs, organizing medical camps and ensuring access to quality healthcare for underserved populations.",
+      responsibilities: [
+        "Organizing medical camps and health screenings",
+        "Coordinating with healthcare professionals and volunteers",
+        "Managing medicine distribution programs",
+        "Developing health awareness and education initiatives",
+      ],
+      email: "priya.patel@givinghands.org",
+      experience: "10+ years in Community Healthcare",
     },
     {
       name: "James Williams",
       role: "Education Lead",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      bio: "James is a passionate educator with 8 years of experience in educational program development. He manages our scholarship programs, tutoring initiatives, and works to ensure every child has access to quality education.",
+      responsibilities: [
+        "Managing scholarship and sponsorship programs",
+        "Coordinating tutoring and mentorship initiatives",
+        "Developing educational curriculum and materials",
+        "Building partnerships with schools and educational institutions",
+      ],
+      email: "james.williams@givinghands.org",
+      experience: "8+ years in Educational Program Development",
     },
   ];
 
@@ -131,16 +187,21 @@ const About = () => {
               {team.map((member, index) => (
                 <div
                   key={index}
-                  className="group text-center animate-fade-in"
+                  onClick={() => handleMemberClick(member)}
+                  className="group text-center animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="relative mb-4 overflow-hidden rounded-2xl shadow-card group-hover:shadow-hover transition-smooth">
+                  <div className="relative mb-4 overflow-hidden rounded-2xl shadow-card group-hover:shadow-hover transition-smooth hover-lift">
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full aspect-square object-cover group-hover:scale-110 transition-smooth duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg">
+                        View Profile
+                      </span>
+                    </div>
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-1">
                     {member.name}
@@ -151,8 +212,15 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        <TeamMemberDialog
+          member={selectedMember}
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+        />
     </>
   );
 };
 
 export default About;
+
