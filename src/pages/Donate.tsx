@@ -151,19 +151,43 @@ const Donate = () => {
               <div className="space-y-6">
                 <div className="bg-card p-6 rounded-2xl shadow-card">
                   <h3 className="font-heading font-bold text-2xl mb-4 text-center">
-                    Scan to Pay
+                    Scan to Pay via UPI
                   </h3>
                   <div className="flex justify-center mb-4">
-                    <img
-                      src={paymentQR}
-                      alt="Payment QR Code"
-                      className="w-64 h-64 rounded-xl shadow-md"
-                    />
+                    <div className="p-4 bg-white rounded-xl shadow-md">
+                      <img
+                        src={paymentQR}
+                        alt="UPI Payment QR Code"
+                        className="w-56 h-56"
+                      />
+                    </div>
                   </div>
-                  <p className="text-center text-muted-foreground">
-                    Scan this QR code with your UPI app or payment gateway to
-                    donate instantly.
-                  </p>
+                  <div className="text-center space-y-2">
+                    <p className="text-muted-foreground">
+                      Scan this QR code with any UPI app
+                    </p>
+                    <div className="flex items-center justify-center gap-2 flex-wrap">
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                        Google Pay
+                      </span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                        PhonePe
+                      </span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                        Paytm
+                      </span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                        BHIM
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-center">UPI ID</h4>
+                    <p className="text-center font-mono text-sm text-primary">
+                      givinghands@upi
+                    </p>
+                  </div>
                 </div>
 
                 <div className="bg-success/10 p-6 rounded-2xl border border-success/20">

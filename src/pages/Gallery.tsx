@@ -1,10 +1,24 @@
+import { useState } from "react";
 import Hero from "@/components/Hero";
+import { Button } from "@/components/ui/button";
 import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
 import foodImg from "@/assets/food-program.jpg";
 import womenImg from "@/assets/women-program.jpg";
 
 const Gallery = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = [
+    "All",
+    "Education",
+    "Healthcare",
+    "Food Distribution",
+    "Empowerment",
+    "Events",
+    "Volunteers",
+  ];
+
   const galleryItems = [
     {
       image: educationImg,
@@ -46,21 +60,83 @@ const Gallery = () => {
       title: "Medical Checkup Drive",
       category: "Healthcare",
     },
+    {
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+      title: "School Supplies Distribution",
+      category: "Education",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800",
+      title: "Volunteer Team Meeting",
+      category: "Volunteers",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
+      title: "Skills Training Workshop",
+      category: "Empowerment",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
+      title: "Scholarship Ceremony",
+      category: "Education",
+    },
   ];
+
+  const filteredItems =
+    activeCategory === "All"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
     <>
-        <Hero
-          title="Our Gallery"
-          subtitle="Witness the impact of our work through these moments of hope, compassion, and transformation."
-          showCTA={false}
-        />
+      <Hero
+        title="Our Gallery"
+        subtitle="Witness the impact of our work through these moments of hope, compassion, and transformation."
+        showCTA={false}
+      />
 
-        {/* Gallery Grid */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {galleryItems.map((item, index) => (
+      {/* Gallery Grid */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          {/* Category Filter */}
+          <div className="mb-12">
+            <h2 className="font-heading font-bold text-3xl mb-6 text-center">
+              Browse by Category
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={activeCategory === category ? "default" : "outline"}
+                  size="lg"
+                  onClick={() => setActiveCategory(category)}
+                  className="font-semibold"
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* Images Count */}
+          <div className="text-center mb-8">
+            <p className="text-muted-foreground">
+              Showing {filteredItems.length}{" "}
+              {activeCategory === "All" ? "" : activeCategory}{" "}
+              {filteredItems.length === 1 ? "image" : "images"}
+            </p>
+          </div>
+
+          {/* Gallery Items */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredItems.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground text-lg">
+                  No images found in this category.
+                </p>
+              </div>
+            ) : (
+              filteredItems.map((item, index) => (
                 <div
                   key={index}
                   className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-hover transition-smooth hover-lift animate-fade-in cursor-pointer"
@@ -84,23 +160,24 @@ const Gallery = () => {
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              ))
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <section className="py-16 gradient-hero text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading font-bold text-4xl mb-6">
-              Be Part of Our Story
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
-              Join us in creating more moments of joy, hope, and transformation
-              in communities across the region.
-            </p>
-          </div>
-        </section>
+      {/* Call to Action */}
+      <section className="py-16 gradient-hero text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-heading font-bold text-4xl mb-6">
+            Be Part of Our Story
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
+            Join us in creating more moments of joy, hope, and transformation in
+            communities across the region.
+          </p>
+        </div>
+      </section>
     </>
   );
 };
