@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Heart, Target, Award, Users } from "lucide-react";
 
@@ -51,10 +49,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow pt-20">
+    <>
         <Hero
           title="About Giving Hands Foundation"
           subtitle="Building a better tomorrow through compassion, dedication, and community action."
@@ -156,10 +151,7 @@ const About = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

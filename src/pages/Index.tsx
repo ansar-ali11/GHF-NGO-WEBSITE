@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import StatsCounter from "@/components/StatsCounter";
 import ProgramCard from "@/components/ProgramCard";
@@ -61,10 +59,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow pt-20">
+    <>
         {/* Hero Section */}
         <Hero
           title="Empowering Communities Through Care"
@@ -188,10 +183,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

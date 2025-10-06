@@ -1,7 +1,4 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import ProgramCard from "@/components/ProgramCard";
 import { GraduationCap, Heart, Utensils, Users } from "lucide-react";
 import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
@@ -69,10 +66,7 @@ const Programs = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow pt-20">
+    <>
         <Hero
           title="Our Programs"
           subtitle="Comprehensive initiatives designed to address critical needs and empower communities for sustainable growth."
@@ -161,10 +155,7 @@ const Programs = () => {
             </p>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

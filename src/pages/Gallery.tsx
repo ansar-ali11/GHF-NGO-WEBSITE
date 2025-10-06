@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
@@ -51,10 +49,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow pt-20">
+    <>
         <Hero
           title="Our Gallery"
           subtitle="Witness the impact of our work through these moments of hope, compassion, and transformation."
@@ -106,10 +101,7 @@ const Gallery = () => {
             </p>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
