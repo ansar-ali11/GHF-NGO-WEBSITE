@@ -5,6 +5,16 @@ import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
 import foodImg from "@/assets/food-program.jpg";
 import womenImg from "@/assets/women-program.jpg";
+import fd1 from "@/assets/fd1.jpg";
+import fd2 from "@/assets/fd2.jpg";
+import fd3 from "@/assets/fd3.jpg";
+import fd4 from "@/assets/fd4.jpg";
+import ed1 from "@/assets/ed1.jpg";
+import ed2 from "@/assets/ed2.jpg";
+import ed3 from "@/assets/ed3.jpg";
+import ed4 from "@/assets/ed4.jpg";
+import h1 from "@/assets/h1.jpg";
+import ed5 from "@/assets/ed5.jpg";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -32,22 +42,22 @@ const Gallery = () => {
     },
    
     {
-      image: "src/assets/fd4.jpg",
+      image: fd4,
       title: "Food Distribution",
       category: "Food Distribution",
     },
     {
-      image: "src/assets/fd1.jpg",
+      image: fd1,
       title: "Food & Clothes Distribution",
       category: "Food Distribution",
     },
     {
-      image: "src/assets/fd2.jpg",
+      image: fd2,
       title: "Food & Clothes Distribution",
       category: "Food Distribution",
     },
     {
-      image: "src/assets/fd3.jpg",
+      image: fd3,
       title: "Food & Clothes Distribution",
       category: "Food Distribution",
     },
@@ -78,12 +88,12 @@ const Gallery = () => {
       category: "Events",
     },
     {
-      image: "src/assets/h1.jpg",
+      image: h1,
       title: "Blood Donation",
       category: "Healthcare",
     },
     {
-      image: "src/assets/ed4.jpg",
+      image: ed4,
       title: "Children's Day",
       category: "Education",
     },
@@ -98,22 +108,22 @@ const Gallery = () => {
       category: "Empowerment",
     },
     {
-      image: "src/assets/ed1.jpg",
+      image: ed1,
       title: "Scholarship Ceremony",
       category: "Education",
     },
     {
-      image: "src/assets/ed2.jpg",
+      image: ed2,
       title: "Motivation",
       category: "Education",
     },
     {
-      image: "src/assets/ed3.jpg",
+      image: ed3,
       title: "Children's Day Celebration",
       category: "Education",
     },
     {
-      image: "src/assets/ed5.jpg",
+      image: ed5,
       title: "Skill Development",
       category: "Education",
     },
