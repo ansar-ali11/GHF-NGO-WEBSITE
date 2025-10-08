@@ -44,7 +44,7 @@ const Index = () => {
       title: "Food Distribution",
       description:
         "Nutritious meals and food packages delivered to families facing food insecurity and hunger.",
-      image: foodImg,
+      image: "src/assets/fd4.jpg",
       impact: "100,000+ Meals",
       icon: <Utensils className="h-6 w-6 text-accent" />,
     },
@@ -153,34 +153,63 @@ const Index = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-20 gradient-hero text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading font-bold text-4xl mb-6">
-              Make a Difference Today
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
-              Your support helps us reach more communities and create lasting
-              change. Every contribution matters.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/donate">
-                <Button
-                  size="lg"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-lg px-8 py-6 rounded-full hover-lift"
-                >
-                  Donate Now
-                </Button>
-              </Link>
-              <Link to="/get-involved">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white hover:text-foreground font-semibold text-lg px-8 py-6 rounded-full hover-lift"
-                >
-                  Become a Volunteer
-                </Button>
-              </Link>
+       <section className="relative py-24 gradient-hero text-white overflow-hidden">
+          {/* Animated Background Shapes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl floating"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl floating" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 animate-fade-in">
+                <span className="text-white font-semibold text-sm uppercase tracking-wider">Join Our Mission</span>
+              </div>
+              
+              <h2 className="font-heading font-bold text-4xl lg:text-6xl mb-6 animate-fade-in leading-tight" style={{ animationDelay: '0.1s' }}>
+                Make a Difference <br className="hidden md:block" />
+                <span className="relative">
+                  Today
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-accent rounded-full"></div>
+                </span>
+              </h2>
+              
+              <p className="text-xl lg:text-2xl mb-10 max-w-2xl mx-auto opacity-95 animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
+                Your support helps us reach more communities and create lasting
+                change. Every contribution matters.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <Link to="/donate">
+                  <Button
+                  style={{backgroundColor:"goldenrod"}}
+                    size="lg"
+                    className="gradient-accent text-accent-foreground hover:opacity-90 font-bold text-lg px-10 py-7 rounded-full hover-lift hover-scale shadow-glow border-0"
+                  >
+                    Donate Now
+                    <Heart className="ml-2 h-5 w-5 fill-current" />
+                  </Button>
+                </Link>
+                <Link to="/get-involved">
+                  <Button
+                    size="lg"
+                    className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-10 py-7 rounded-full hover-lift hover-scale shadow-elegant"
+                  >
+                    Become a Volunteer
+                    <Users className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
+          </div>
+
+          {/* Bottom Wave Decoration */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              <path d="M0 50L60 45C120 40 240 30 360 35C480 40 600 60 720 65C840 70 960 60 1080 50C1200 40 1320 30 1380 25L1440 20V100H0V50Z" fill="hsl(var(--background))" fillOpacity="0.3"/>
+              <path d="M0 70L60 65C120 60 240 50 360 55C480 60 600 80 720 85C840 90 960 80 1080 70C1200 60 1320 50 1380 45L1440 40V100H0V70Z" fill="hsl(var(--background))"/>
+            </svg>
           </div>
         </section>
     </>

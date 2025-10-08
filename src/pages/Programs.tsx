@@ -39,7 +39,7 @@ const Programs = () => {
       title: "Food Distribution",
       description:
         "Through our food distribution program, we provide nutritious meals and food packages to families facing food insecurity. Our community kitchens serve hot meals daily to those in need.",
-      image: foodImg,
+      image: "src/assets/fd4.jpg",
       impact: "100,000+ Meals Served",
       icon: <Utensils className="h-6 w-6 text-accent" />,
       details: [

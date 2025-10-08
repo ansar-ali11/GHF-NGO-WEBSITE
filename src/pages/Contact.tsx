@@ -37,12 +37,12 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Address",
-      content: "123 Hope Street, Community Center, City 12345",
+      content: "Sankarashanapuram Mudinepalli Mandal Eluru district Andhra pradesh",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      content: "+1 (234) 567-890",
+      content: "+91 7989322634",
     },
     {
       icon: <Mail className="h-6 w-6" />,
@@ -168,15 +168,14 @@ const Contact = () => {
                     Find Us
                   </h3>
                   <div className="rounded-2xl overflow-hidden shadow-card h-[300px]">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459391!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1629794729807!5m2!1sen!2sus"
-                      width="100%"
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40663.952253570416!2d81.073600910542!3d16.395869930267448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a361e81ebc5a9ad%3A0x87f0d57e83c29148!2sSankarshana%20Puram%2C%20Andhra%20Pradesh%20521325!5e0!3m2!1sen!2sin!4v1759912444848!5m2!1sen!2sin" 
+                    width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       title="Location Map"
-                    />
+                   />
                   </div>
                 </div>
               </div>

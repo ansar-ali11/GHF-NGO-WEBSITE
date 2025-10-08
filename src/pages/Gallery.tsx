@@ -30,11 +30,33 @@ const Gallery = () => {
       title: "Healthcare Camp",
       category: "Healthcare",
     },
+   
     {
+      image: "src/assets/fd4.jpg",
+      title: "Food Distribution",
+      category: "Food Distribution",
+    },
+    {
+      image: "src/assets/fd1.jpg",
+      title: "Food & Clothes Distribution",
+      category: "Food Distribution",
+    },
+    {
+      image: "src/assets/fd2.jpg",
+      title: "Food & Clothes Distribution",
+      category: "Food Distribution",
+    },
+    {
+      image: "src/assets/fd3.jpg",
+      title: "Food & Clothes Distribution",
+      category: "Food Distribution",
+    },
+     {
       image: foodImg,
       title: "Food Distribution",
       category: "Food Distribution",
     },
+    
     {
       image: womenImg,
       title: "Women Empowerment",
@@ -56,13 +78,13 @@ const Gallery = () => {
       category: "Events",
     },
     {
-      image: "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800",
-      title: "Medical Checkup Drive",
+      image: "src/assets/h1.jpg",
+      title: "Blood Donation",
       category: "Healthcare",
     },
     {
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
-      title: "School Supplies Distribution",
+      image: "src/assets/ed4.jpg",
+      title: "Children's Day",
       category: "Education",
     },
     {
@@ -76,8 +98,23 @@ const Gallery = () => {
       category: "Empowerment",
     },
     {
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
+      image: "src/assets/ed1.jpg",
       title: "Scholarship Ceremony",
+      category: "Education",
+    },
+    {
+      image: "src/assets/ed2.jpg",
+      title: "Motivation",
+      category: "Education",
+    },
+    {
+      image: "src/assets/ed3.jpg",
+      title: "Children's Day Celebration",
+      category: "Education",
+    },
+    {
+      image: "src/assets/ed5.jpg",
+      title: "Skill Development",
       category: "Education",
     },
   ];

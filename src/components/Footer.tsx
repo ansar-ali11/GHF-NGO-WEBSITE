@@ -16,7 +16,7 @@ const Footer = () => {
                 className="h-10 w-10 object-contain"
               />
               <span className="font-heading font-bold text-xl">
-                Giving Hands
+                Giving Hands foundation
               </span>
             </div>
             <p className="text-footer-foreground/80 mb-4">
