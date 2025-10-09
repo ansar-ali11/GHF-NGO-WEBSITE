@@ -2,6 +2,8 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import TeamMemberDialog from "@/components/TeamMemberDialog";
 import { Heart, Target, Award, Users } from "lucide-react";
+import f1 from '@/assets/founder1.jpg';
+import f2 from '@/assets/founder2.jpg';
 
 interface TeamMember {
   name: string;
@@ -47,24 +49,24 @@ const About = () => {
 
   const team: TeamMember[] = [
     {
-      name: "Sarah Johnson",
+      name: "Mutyala Anusha",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
-      bio: "Sarah founded Giving Hands Foundation in 2010 with a vision to create sustainable change in underserved communities. With over 15 years of experience in non-profit management, she has led the organization from a small local initiative to a comprehensive foundation serving thousands.",
+      image: f1,
+      bio: "Anusha founded Giving Hands Foundation in 2010 with a vision to create sustainable change in underserved communities. With over 15 years of experience in non-profit management, she has led the organization from a small local initiative to a comprehensive foundation serving thousands.",
       responsibilities: [
         "Strategic planning and organizational leadership",
         "Donor relations and fundraising initiatives",
         "Partnership development with government and corporate entities",
         "Overall program oversight and impact measurement",
       ],
-      email: "sarah.johnson@givinghands.org",
+      email: "mutyalaanusha7@gmail.com",
       experience: "15+ years in Non-Profit Leadership",
     },
     {
-      name: "Michael Chen",
+      name: "Battula Kiran babu",
       role: "Program Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-      bio: "Michael brings 12 years of program management experience to Giving Hands. He oversees all program operations, ensuring quality delivery and measurable impact across education, healthcare, and empowerment initiatives.",
+      image: f2,
+      bio: "Kiran brings 15 years of program management experience to Giving Hands. He oversees all program operations, ensuring quality delivery and measurable impact across education, healthcare, and empowerment initiatives.",
       responsibilities: [
         "Program design, implementation, and monitoring",
         "Team coordination and volunteer management",
@@ -72,35 +74,7 @@ const About = () => {
         "Quality assurance and program evaluation",
       ],
       email: "michael.chen@givinghands.org",
-      experience: "12+ years in Program Management",
-    },
-    {
-      name: "Priya Patel",
-      role: "Healthcare Coordinator",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
-      bio: "Dr. Priya Patel is a registered nurse with 10 years of community health experience. She leads our healthcare programs, organizing medical camps and ensuring access to quality healthcare for underserved populations.",
-      responsibilities: [
-        "Organizing medical camps and health screenings",
-        "Coordinating with healthcare professionals and volunteers",
-        "Managing medicine distribution programs",
-        "Developing health awareness and education initiatives",
-      ],
-      email: "priya.patel@givinghands.org",
-      experience: "10+ years in Community Healthcare",
-    },
-    {
-      name: "James Williams",
-      role: "Education Lead",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-      bio: "James is a passionate educator with 8 years of experience in educational program development. He manages our scholarship programs, tutoring initiatives, and works to ensure every child has access to quality education.",
-      responsibilities: [
-        "Managing scholarship and sponsorship programs",
-        "Coordinating tutoring and mentorship initiatives",
-        "Developing educational curriculum and materials",
-        "Building partnerships with schools and educational institutions",
-      ],
-      email: "james.williams@givinghands.org",
-      experience: "8+ years in Educational Program Development",
+      experience: "15+ years in Program Management",
     },
   ];
 
@@ -143,8 +117,8 @@ const About = () => {
                   unwavering commitment of our volunteers and donors.
                 </p>
               </div>
+              </div>
             </div>
-          </div>
         </section>
 
         {/* Our Values */}
@@ -175,15 +149,19 @@ const About = () => {
         {/* Leadership Team */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
+            
             <h2 className="font-heading font-bold text-4xl mb-4 text-center">
               Meet Our Team
             </h2>
+         
+           
             <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
               Dedicated professionals committed to creating positive change in
               communities.
             </p>
+           
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {team.map((member, index) => (
                 <div
                   key={index}
