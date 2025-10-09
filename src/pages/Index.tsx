@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
-import foodImg from "@/assets/food-program.jpg";
+import foodimg from '@/assets/fd4.jpg';
 import womenImg from "@/assets/women-program.jpg";
 
 const Index = () => {
@@ -44,7 +44,7 @@ const Index = () => {
       title: "Food Distribution",
       description:
         "Nutritious meals and food packages delivered to families facing food insecurity and hunger.",
-      image: "src/assets/fd4.jpg",
+      image: foodimg,
       impact: "100,000+ Meals",
       icon: <Utensils className="h-6 w-6 text-accent" />,
     },

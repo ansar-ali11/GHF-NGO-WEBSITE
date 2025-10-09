@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/ghf-logo1.jpg"; // adjust path if needed
+import logo from "../assets/ghf-logo1.jpg";
 
 const Intro = ({ onFinish }: { onFinish: () => void }) => {
   useEffect(() => {
