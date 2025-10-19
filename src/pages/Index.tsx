@@ -4,6 +4,7 @@ import StatsCounter from "@/components/StatsCounter";
 import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import wo from '@/assets/w3.jpg';
+import vd from '@/assets/ghf-vd.mp4';
 import {
   GraduationCap,
   Heart,
@@ -143,7 +144,7 @@ const Index = () => {
                       playsInline
                       preload="auto"
                     >
-                      <source src="src/assets/ghf-vd.mp4" type="video/mp4" />
+                      <source src={vd} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                     
