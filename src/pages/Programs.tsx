@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
 import { GraduationCap, Heart, Utensils, Users } from "lucide-react";
-import educationImg from "@/assets/education-program.jpg";
+import edu from '@/assets/ed4.jpg';
 import healthcareImg from "@/assets/healthcare-program.jpg";
 import foodImg from "@/assets/food-program.jpg";
 import womenImg from "@/assets/women-program.jpg";
+import wo from '@/assets/w5.jpg';
 
 const Programs = () => {
   const programs = [
@@ -11,7 +12,7 @@ const Programs = () => {
       title: "Education Initiative",
       description:
         "Our education programs provide scholarships, school supplies, tutoring, and mentorship to underprivileged children. We believe education is the foundation for breaking the cycle of poverty and creating opportunities for future generations.",
-      image: educationImg,
+      image: edu,
       impact: "10,000+ Students Supported",
       icon: <GraduationCap className="h-6 w-6 text-primary" />,
       details: [
@@ -53,7 +54,7 @@ const Programs = () => {
       title: "Women Empowerment",
       description:
         "Our women empowerment programs focus on skill development, vocational training, financial literacy, and entrepreneurship support to help women achieve economic independence and confidence.",
-      image: womenImg,
+      image: wo,
       impact: "5,000+ Women Trained",
       icon: <Users className="h-6 w-6 text-primary" />,
       details: [

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsCounter from "@/components/StatsCounter";
 import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
+import wo from '@/assets/w3.jpg';
 import {
   GraduationCap,
   Heart,
@@ -10,11 +11,10 @@ import {
   Users,
   ArrowRight,
 } from "lucide-react";
-import educationImg from "@/assets/education-program.jpg";
 import healthcareImg from "@/assets/healthcare-program.jpg";
 import foodimg from '@/assets/fd4.jpg';
 import womenImg from "@/assets/women-program.jpg";
-
+import edu from '@/assets/ed5.jpg';
 const Index = () => {
   const stats = [
     { value: 50000, label: "Lives Impacted" },
@@ -28,7 +28,7 @@ const Index = () => {
       title: "Education Initiative",
       description:
         "Providing quality education, school supplies, and scholarships to underprivileged children to build a brighter future.",
-      image: educationImg,
+      image: edu,
       impact: "10,000+ Students",
       icon: <GraduationCap className="h-6 w-6 text-primary" />,
     },
@@ -52,7 +52,7 @@ const Index = () => {
       title: "Women Empowerment",
       description:
         "Skill development programs, vocational training, and financial literacy to empower women economically.",
-      image: womenImg,
+      image: wo,
       impact: "5,000+ Women Trained",
       icon: <Users className="h-6 w-6 text-primary" />,
     },
@@ -102,7 +102,67 @@ const Index = () => {
           </div>
         </section>
         
-        
+  {/* Video Showcase */}
+        <section className="py-20 bg-gradient-to-b from-background via-success/5 to-background relative overflow-hidden">
+          {/* Enhanced Decorative Background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-20 w-[600px] h-[600px] gradient-success rounded-full opacity-10 blur-3xl floating"></div>
+            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] gradient-primary rounded-full opacity-10 blur-3xl floating" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] gradient-accent rounded-full opacity-5 blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16 animate-fade-in">
+              <div className="inline-block px-6 py-2 bg-gradient-to-r from-primary/10 to-success/10 rounded-full mb-4 backdrop-blur-sm">
+                <span className="bg-gradient-primary text-gradient font-semibold text-sm uppercase tracking-wider">Our Story in Motion</span>
+              </div>
+              <h2 className="font-heading font-bold text-4xl lg:text-6xl mb-6 leading-tight">
+                Experience Our <br className="hidden md:block" />
+                <span className="bg-gradient-success text-gradient">Real Impact</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+                Watch the transformation unfold as we work together to build stronger, healthier communities.
+              </p>
+            </div>
+
+            <div className="max-w-6xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="relative group">
+                {/* Enhanced Video Container */}
+                <div className="relative rounded-3xl overflow-hidden shadow-glow hover-lift">
+                  {/* Animated Gradient Border */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-success to-accent opacity-30 blur-2xl group-hover:opacity-40 transition-all duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-primary/20 animate-pulse"></div>
+                  
+                  {/* Video Wrapper */}
+                  <div className="relative bg-gradient-to-br from-card to-card/80 rounded-3xl overflow-hidden backdrop-blur-sm border border-primary/10">
+                    <video
+                      className="w-full aspect-video object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                    >
+                      <source src="src/assets/ghf-vd.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    
+                    {/* Video Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none"></div>
+                  </div>
+                </div>
+
+                {/* Enhanced Decorative Elements */}
+                <div className="absolute -top-6 -left-6 w-32 h-32 gradient-success rounded-full opacity-30 blur-3xl group-hover:opacity-40 transition-all duration-500 floating"></div>
+                <div className="absolute -bottom-6 -right-6 w-40 h-40 gradient-primary rounded-full opacity-30 blur-3xl group-hover:opacity-40 transition-all duration-500 floating" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 -left-8 w-24 h-24 gradient-accent rounded-full opacity-20 blur-2xl floating" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/2 -right-8 w-28 h-28 gradient-success rounded-full opacity-20 blur-2xl floating" style={{ animationDelay: '1.5s' }}></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Impact Statistics */}
         <section className="py-16 bg-primary/5">
           <div className="container mx-auto px-4">
