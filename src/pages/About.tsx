@@ -73,7 +73,7 @@ const About = () => {
         "Budget planning and resource allocation",
         "Quality assurance and program evaluation",
       ],
-      email: "michael.chen@givinghands.org",
+      email: "ghfindia22@gmail.com",
       experience: "15+ years in Program Management",
     },
   ];

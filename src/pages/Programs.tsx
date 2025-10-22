@@ -5,6 +5,7 @@ import healthcareImg from "@/assets/healthcare-program.jpg";
 import foodImg from "@/assets/food-program.jpg";
 import womenImg from "@/assets/women-program.jpg";
 import wo from '@/assets/w5.jpg';
+import fd from '@/assets/fd4.jpg';
 
 const Programs = () => {
   const programs = [
@@ -40,7 +41,7 @@ const Programs = () => {
       title: "Food Distribution",
       description:
         "Through our food distribution program, we provide nutritious meals and food packages to families facing food insecurity. Our community kitchens serve hot meals daily to those in need.",
-      image: "src/assets/fd4.jpg",
+      image: fd,
       impact: "100,000+ Meals Served",
       icon: <Utensils className="h-6 w-6 text-accent" />,
       details: [

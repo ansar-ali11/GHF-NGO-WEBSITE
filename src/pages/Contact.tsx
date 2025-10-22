@@ -47,12 +47,12 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      content: "info@givinghands.org",
+      content: "ghfindia22@gmail.com",
     },
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Office Hours",
-      content: "Mon - Fri: 9:00 AM - 5:00 PM",
+      content: "Mon - Sat: 9:00 AM - 5:00 PM",
     },
   ];
 

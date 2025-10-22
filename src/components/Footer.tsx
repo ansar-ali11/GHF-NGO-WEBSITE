@@ -156,7 +156,7 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <span className="text-footer-foreground/80">
-                  123 Hope Street, Community Center, City 12345
+                  Sankarashanapuram Mudinepalli Mandal Eluru district Andhra pradesh
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -165,7 +165,7 @@ const Footer = () => {
                   href="tel:+1234567890"
                   className="text-footer-foreground/80 hover:text-footer-foreground transition-smooth"
                 >
-                  +1 (234) 567-890
+                  +91 7989322634
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -174,7 +174,7 @@ const Footer = () => {
                   href="mailto:info@givinghands.org"
                   className="text-footer-foreground/80 hover:text-footer-foreground transition-smooth"
                 >
-                  info@givinghands.org
+                  ghfindia22@gmail.com
                 </a>
               </li>
             </ul>
