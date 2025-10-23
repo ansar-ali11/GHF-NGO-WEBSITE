@@ -222,44 +222,7 @@ const GetInvolved = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <h2 className="font-heading font-bold text-4xl mb-4 text-center">
-              Volunteer Stories
-            </h2>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-              Hear from our amazing volunteers and supporters.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="p-6 rounded-2xl bg-card shadow-card hover:shadow-hover transition-smooth"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <h3 className="font-heading font-bold">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground italic">
-                    "{testimonial.text}"
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+       
     </>
   );
 };

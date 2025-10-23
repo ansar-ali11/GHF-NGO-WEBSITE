@@ -6,6 +6,7 @@ import foodImg from "@/assets/food-program.jpg";
 import womenImg from "@/assets/women-program.jpg";
 import wo from '@/assets/w5.jpg';
 import fd from '@/assets/fd4.jpg';
+import h1 from '@/assets/h1.jpg';
 
 const Programs = () => {
   const programs = [
@@ -27,7 +28,7 @@ const Programs = () => {
       title: "Healthcare Services",
       description:
         "We organize free medical camps, health screenings, and provide essential medicines to communities with limited healthcare access. Our mobile clinics reach remote areas, ensuring no one is left behind.",
-      image: healthcareImg,
+      image: h1,
       impact: "25,000+ Medical Consultations",
       icon: <Heart className="h-6 w-6 text-success" />,
       details: [

@@ -5,6 +5,7 @@ import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import wo from '@/assets/w3.jpg';
 import vd from '@/assets/ghf-vd.mp4';
+import h1 from '@/assets/h1.jpg';
 import {
   GraduationCap,
   Heart,
@@ -37,7 +38,7 @@ const Index = () => {
       title: "Healthcare Services",
       description:
         "Free medical camps, health checkups, and essential medicines for communities with limited access to healthcare.",
-      image: healthcareImg,
+      image: h1,
       impact: "25,000+ Treatments",
       icon: <Heart className="h-6 w-6 text-success" />,
     },

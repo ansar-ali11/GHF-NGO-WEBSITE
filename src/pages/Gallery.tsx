@@ -181,34 +181,16 @@ const Gallery = () => {
       size: "medium",
     },
     {
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
-      title: "Community Event",
-      category: "Events",
-      size: "medium",
-    },
-    {
       image: ed2,
       title: "Motivation Session",
       category: "Education",
       size: "large",
     },
     {
-      image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800",
-      title: "Volunteer Training",
-      category: "Volunteers",
-      size: "medium",
-    },
-    {
       image: ed3,
       title: "Children's Day Celebration",
       category: "Education",
       size: "tall",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800",
-      title: "Festival Celebration",
-      category: "Events",
-      size: "medium",
     },
     {
       image: healthcareImg,
@@ -221,12 +203,6 @@ const Gallery = () => {
       title: "Skill Development",
       category: "Education",
       size: "medium",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800",
-      title: "Volunteer Team Meeting",
-      category: "Volunteers",
-      size: "tall",
     },
   ];
 
