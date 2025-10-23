@@ -4,9 +4,6 @@ import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X, Sparkles } from "lucide-react";
-import healthcareImg from "@/assets/healthcare-program.jpg";
-import foodImg from "@/assets/food-program.jpg";
-import womenImg from "@/assets/women-program.jpg";
 import fd1 from "@/assets/fd1.jpg";
 import fd2 from "@/assets/fd2.jpg";
 import fd3 from "@/assets/fd3.jpg";
@@ -191,12 +188,6 @@ const Gallery = () => {
       title: "Children's Day Celebration",
       category: "Education",
       size: "tall",
-    },
-    {
-      image: healthcareImg,
-      title: "Healthcare Camp",
-      category: "Healthcare",
-      size: "large",
     },
     {
       image: ed5,
