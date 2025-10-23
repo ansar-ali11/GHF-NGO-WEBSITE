@@ -9,7 +9,13 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  build: {
+    outDir: "dist", // ensures proper build output for Vercel
+  },
+  base: "./", // keeps paths relative and prevents 404 issues on reload
+  plugins: [react(), mode === "development" && componentTagger()].filter(
+    Boolean
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
