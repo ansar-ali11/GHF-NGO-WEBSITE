@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Heart } from "lucide-react";
 import paymentQR from "@/assets/payment-qr.jpg";
+import jsPDF from "jspdf";
 
 declare global {
   interface Window {
@@ -16,13 +17,9 @@ const Donate = () => {
   const { toast } = useToast();
   const [amount, setAmount] = useState("");
   const [showPaymentForm, setShowPaymentForm] = useState(false);
-
-  
-  // Donor details
   const [donorName, setDonorName] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
   const [donorPhone, setDonorPhone] = useState("");
-
   const predefinedAmounts = [500, 1000, 2500, 5000];
 
   // Load Razorpay script
@@ -33,8 +30,8 @@ const Donate = () => {
     document.body.appendChild(script);
   }, []);
 
-  // Step 1: Validate details and show payment
-  const handleProceedToPayment = (e) => {
+  // Step 1: Validate and show payment
+  const handleProceedToPayment = (e: React.FormEvent) => {
     e.preventDefault();
     if (!donorName || !donorEmail || !donorPhone || !amount) {
       toast({
@@ -47,21 +44,24 @@ const Donate = () => {
     setShowPaymentForm(true);
   };
 
-  // Step 2: Razorpay Payment
-  const handleDonate = (e) => {
+  // Step 2: Handle payment
+  const handleDonate = (e: React.FormEvent) => {
     e.preventDefault();
 
     const options = {
-      key: "", // 🔹 Replace with your Razorpay Test Key
+      key: "rzp_live_Ri20ic3ZVglnIe", // 🔹 Replace with your Razorpay Key
       amount: Number(amount) * 100, // in paise
       currency: "INR",
       name: "Giving Hands Foundation",
       description: "Donation Payment",
-      handler: function (response) {
+      handler: function (response: any) {
         toast({
-          title: "Payment Successful",
-          description: `Thank you for donating ₹${amount}! Payment ID: ${response.razorpay_payment_id}`,
+          title: "Payment Successful 🎉",
+          description: `Thank you ${donorName} for donating ₹${amount}!`,
         });
+
+        // 🔹 Generate and download receipt PDF
+        generateReceipt(response.razorpay_payment_id);
       },
       prefill: {
         name: donorName,
@@ -75,6 +75,47 @@ const Donate = () => {
     paymentObject.open();
   };
 
+  // Step 3: Generate PDF Receipt
+  const generateReceipt = (paymentId: string) => {
+    const doc = new jsPDF();
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(20);
+    doc.text("Giving Hands Foundation", 20, 20);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.text("Donation Receipt", 20, 35);
+
+    doc.setLineWidth(0.5);
+    doc.line(20, 38, 190, 38);
+
+    doc.text(`Receipt No: ${Math.floor(Math.random() * 1000000)}`, 20, 50);
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 58);
+
+    doc.text(`Donor Name: ${donorName}`, 20, 70);
+    doc.text(`Email: ${donorEmail}`, 20, 78);
+    doc.text(`Phone: ${donorPhone}`, 20, 86);
+    doc.text(`Payment ID: ${paymentId}`, 20, 94);
+
+    doc.setFont("helvetica", "bold");
+    doc.text(`Donation Amount: ₹${amount}`, 20, 110);
+
+    doc.setFont("helvetica", "normal");
+    doc.text(
+      "We sincerely thank you for your generous support towards our cause.",
+      20,
+      130
+    );
+
+    doc.text("Warm regards,", 20, 150);
+    doc.text("Giving Hands Foundation", 20, 158);
+    doc.text("help@givinghands.org | www.givinghands.org", 20, 166);
+
+    // Download PDF automatically
+    doc.save(`Donation_Receipt_${paymentId}.pdf`);
+  };
+
   return (
     <>
       <Hero
@@ -86,6 +127,7 @@ const Donate = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Left: Donation Form */}
             <div>
               {!showPaymentForm ? (
                 <form onSubmit={handleProceedToPayment} className="space-y-6">
@@ -161,7 +203,7 @@ const Donate = () => {
               )}
             </div>
 
-            {/* Right Section remains same */}
+            {/* Right: QR Payment */}
             <div className="space-y-6">
               <div className="bg-card p-6 rounded-2xl shadow-card">
                 <h3 className="font-heading font-bold text-2xl mb-4 text-center">
