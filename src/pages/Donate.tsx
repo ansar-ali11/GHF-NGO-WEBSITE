@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Heart } from "lucide-react";
-import paymentQR from "@/assets/payment-qr.jpg";
+import paymentQR from "@/assets/GHF QR.jpg";
 import jsPDF from "jspdf";
 
 

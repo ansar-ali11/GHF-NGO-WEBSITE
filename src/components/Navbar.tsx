@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "next-themes";
 import logo from "@/assets/ghf-logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +76,17 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Dark Mode Toggle */}
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted">
+              <Sun className="h-4 w-4 text-muted-foreground" />
+              <Switch
+                checked={theme === "dark"}
+                onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+              />
+              <Moon className="h-4 w-4 text-muted-foreground" />
+            </div>
+
             <Link to="/donate">
               <Button variant="default" size="lg" className="font-semibold">
                 Donate Now
@@ -112,6 +126,20 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Dark Mode Toggle Mobile */}
+              <div className="flex items-center justify-between py-2 px-4 rounded-lg bg-muted">
+                <span className="font-medium text-sm">Dark Mode</span>
+                <div className="flex items-center gap-2">
+                  <Sun className="h-4 w-4 text-muted-foreground" />
+                  <Switch
+                    checked={theme === "dark"}
+                    onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+                  />
+                  <Moon className="h-4 w-4 text-muted-foreground" />
+                </div>
+              </div>
+
               <Link to="/donate" onClick={() => setIsOpen(false)}>
                 <Button
                   variant="default"
