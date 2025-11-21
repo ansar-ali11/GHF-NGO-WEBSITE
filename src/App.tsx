@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
@@ -33,6 +34,7 @@ const App = () => {
           <Intro onFinish={() => setShowIntro(false)} />
         ) : (
           <BrowserRouter>
+           <ScrollToTop />
             <Routes>
               <Route element={<Layout />}>
                 <Route path="/" element={<Index />} />

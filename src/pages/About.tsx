@@ -50,7 +50,7 @@ const About = () => {
   const team: TeamMember[] = [
     {
       name: "Mutyala Anusha",
-      role: "Founder & CEO",
+      role: "Founder",
       image: f1,
       bio: "Anusha founded Giving Hands Foundation in 2010 with a vision to create sustainable change in underserved communities. With over 15 years of experience in non-profit management, she has led the organization from a small local initiative to a comprehensive foundation serving thousands.",
       responsibilities: [
